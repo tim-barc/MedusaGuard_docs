@@ -194,6 +194,7 @@ MedusaGuard includes an Edit Configuration page in the GUI to make it easy to se
 #### Step 1: Access the Edit Configuration Page
 - In the MedusaGuard GUI, navigate to the homepage (dashboard).
 - Click the **Edit Config** button to open the configuration editor.
+
 ![image](https://github.com/user-attachments/assets/0d19fd60-03b2-4e8c-b5d3-cfa1a51d9d6f)
 
 #### Step 2: Fill Out the Configuration Fields
@@ -204,6 +205,7 @@ Many of these fields come preconfigured. You only need to add your **Greenbone c
 - **Greenbone Password**: Password for your Greenbone account (e.g., `mypassword`).
 - **Target Name**: Name of the scan target (e.g., `MyTargetServer`).
 - **Target IP Address**: IP address of the target machine (e.g., `192.168.1.100`).
+
 ![image](https://github.com/user-attachments/assets/59027738-1b53-4bb9-94f6-6022b80295bf)
 
 Once completed, press **Save**.
@@ -313,6 +315,7 @@ To modify the scan configuration through the CLI, pass one or more arguments whe
 sudo python3 main.py --task_name example --target_name example
 ```
 ![image](https://github.com/user-attachments/assets/7eff9ddf-a492-43c9-bc81-855d18ca3226)
+
 ---
 
 ## **Troubleshooting Guide**  
