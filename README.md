@@ -26,10 +26,9 @@
 5. [Quick Start Guide](#quick-start)
 6. [User Guide](#user-guide)
 7. [Modifying Scripts](#modifying-scripts)
-8. [Troubleshooting](#troubleshooting)
+8. [Troubleshooting Guide](#troubleshooting-guide)
 9. [Sample Reports](#sample-reports)
-10. [License](#license)
-11. [Credits](#credits)
+10. [Credits](#credits)
 
 ---
 
@@ -325,7 +324,7 @@ sudo python3 main.py --task_name example --target_name example
 <sup><span style="font-size: xxx-small;">[Back to top](#-table-of-contents)</span></sup>
 ---
 
-## ✏️ **Modifying Scripts**
+## **Modifying Scripts**
 MedusaGuard is open-source, and you may need to modify some of its scripts to suit your specific needs. Below are some common modifications and how to implement them:
 
 #### **Modifying Templates for Nuclei** ####
