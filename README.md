@@ -334,6 +334,7 @@ nuclei_commands = {
 }
 ```
 
+
 This is where you can remove, add, or modify Nuclei templates. For context, Nuclei templates is how vulnerabilities are identified, so HTTP templates for example can identify HTTP based vulnerabilities. 
 
 #### **Modifying Timeout Settings for Long-Running Scans**
@@ -345,6 +346,7 @@ If you find that scans are timing out, you can increase the timeout settings in 
 ```python
 subprocess.run(['nikto', '-h', target], timeout=3600)  # Timeout is an hour
 ```
+
 
 #### **Changing Default Scan Configurations**
 You may wish to change the default scan configurations used by MedusaGuard.
@@ -371,6 +373,7 @@ scanner = 08b69003-5fc2-4037-a479-93b440211c73
 
 #### **Customising Final Report**
 If you need to customize the final report, you can modify the 'report_utils.py' file. Each section of the report is commented accordinly, enabling you to add, modify, or remove sections.
+
 
 #### **Integrating Additional Tools**
 You might want to add new tools for scanning or exploitation to enhance MedusaGuard's capabilities. MedusaGuard is a module based tool, meaning you can add as many modules as desired to expand on the tools current capabilities
