@@ -40,9 +40,7 @@ detection and controlled exploitation of vulnerabilities.
 
 MedusaGuard integrates well-established open-source tools—**Nikto**, **Greenbone OpenVAS**, **Nuclei**, and **Metasploit**—for comprehensive vulnerability scanning and exploitation. It prioritizes security while maintaining system availability and integrity, ensuring that no harmful payloads are delivered during scans.
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
-
-<span style="font-size: xx-small;">[🔼 Back to top](#-table-of-contents)</span>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## 🛠️ **Technologies Used**
@@ -59,7 +57,7 @@ A highly efficient, template-based vulnerability scanner that detects security f
 #### Metasploit Framework
 Used for controlled exploitation of identified vulnerabilities to safely validate their impact in real-world scenarios without compromising system integrity.
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## 🌟 **Key Features**
@@ -73,7 +71,7 @@ Automatically maps detected vulnerabilities to corresponding exploits, streamlin
 #### Interactive Dashboard for Reports
 A GUI-based dashboard provides real-time insights into vulnerabilities, along with both technical and non-technical reports, making it accessible for all stakeholders—from security analysts to executive decision-makers.
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## ⚙️ **Installation**
@@ -91,7 +89,7 @@ cd MedusaGuard
 sudo pip3 install -r requirements.txt
 ```
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## 🚀 **Quick Start**
@@ -126,7 +124,7 @@ The help menu provides a list of available arguments and usage examples to guide
 usage: main.py [-h] [--config CONFIG] [--username USERNAME] [--password PASSWORD] ...
 ```
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## **User Guide**
@@ -324,7 +322,7 @@ sudo python3 main.py --task_name example --target_name example
 ```
 ![image](https://github.com/user-attachments/assets/7eff9ddf-a492-43c9-bc81-855d18ca3226)
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## ✏️ **Modifying Scripts**
@@ -403,7 +401,7 @@ Add the function call to the main scan execution flow:
 run_new_tool(target)
 ```
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## 🆘 **Troubleshooting Guide**  
@@ -454,7 +452,7 @@ This section lists common issues that may arise with MedusaGuard, along with rec
 - **Cause**: Long-running scans, especially on large networks, may exceed the set timeout (1 hour).
 - **Solution**: Increase timeout values directly in the `nikto_utils.py`, `openvas_utils.py`, and `nuclei_utils.py` scripts. You can do this by adjusting the `timeout` parameter in `subprocess.run()` calls.
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
 ## 📑 **Sample Reports**
@@ -474,6 +472,6 @@ Special thanks to the following contributors:
 - **Mark Kerleroux**  — [GitHub: MarkK-LaTrobe](https://github.com/MarkK-LaTrobe)
 - **Timothy Barclay**  — [GitHub: tim-barc](https://github.com/tim-barc)
 
-<sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: xx-small;">[Back to top](#-table-of-contents)</span>
 ---
 
