@@ -1,4 +1,4 @@
-# MedusaGuard 🛡️  
+![image](https://github.com/user-attachments/assets/0418127b-6873-488d-baa3-b85f634c58ad)# MedusaGuard 🛡️  
 **Your Enterprise's Shield Against Vulnerabilities**
 
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg) ![OpenVAS](https://img.shields.io/badge/Tool-OpenVAS-green.svg) ![Nuclei](https://img.shields.io/badge/Tool-Nuclei-yellow.svg) ![Nikto](https://img.shields.io/badge/Tool-Nikto-orange.svg) ![Metasploit](https://img.shields.io/badge/Tool-Metasploit-red.svg)
@@ -23,11 +23,12 @@
    - [Advanced Exploitation Automation](#advanced-exploitation-automation)
    - [Interactive Dashboard for Reports](#interactive-dashboard-for-reports)
 4. [Installation](#installation)
-5. [Quick Start](#quick-start)
-6. [Troubleshooting](#troubleshooting)
-7. [Sample Reports](#sample-reports)
-8. [License](#license)
-9. [Credits](#credits)
+5. [Quick Start Guide](#quick-start)
+6. [User Guide](#user-guide)
+7. [Troubleshooting](#troubleshooting)
+8. [Sample Reports](#sample-reports)
+9. [License](#license)
+10. [Credits](#credits)
 
 ---
 
@@ -118,6 +119,186 @@ The help menu provides a list of available arguments and usage examples to guide
 usage: main.py [-h] [--config CONFIG] [--username USERNAME] [--password PASSWORD] ...
 ```
 
+---
+
+## **User Guide**
+Prior to running your first scan, please verify that you have the necessary services and tools installed, including **gvm**, **Nuclei**, **Nikto**, and **Metasploit**.
+
+#### Step 1: Verifying GVM Services
+Open a terminal in your Linux machine and enter the following command:
+
+```bash
+sudo gvm-start
+```
+![image](https://github.com/user-attachments/assets/bc394121-2ba4-4113-bc10-cbfa23f650fc)
+
+#### Step 2: Verifying Nikto Installation
+Open a terminal in your Linux machine and enter the following command:
+
+```bash
+nikto -Version
+```
+![image](https://github.com/user-attachments/assets/e51ec08f-0ffc-4143-8821-a184294ac6bd)
+
+#### Step 3: Verifying Nuclei Installation
+Open a terminal in your Linux machine and enter the following command:
+
+```bash
+nuclei -version
+```
+![image](https://github.com/user-attachments/assets/ce3403b8-6350-4817-9e34-7b6b88300425)
+
+#### Step 4: Verifying Metasploit Installation
+Open a terminal in your Linux machine and enter the following command:
+
+```bash
+msfconsole -v
+```
+![image](https://github.com/user-attachments/assets/5ed97628-7375-455e-b5eb-d9e9ca7fc6ee)
+
+Additionally, verify **msfrpc** by running:
+
+```bash
+msfrpc
+```
+![image](https://github.com/user-attachments/assets/bca149b0-22d4-42ac-807e-d8f6964530a5)
+
+---
+
+## **Launching MedusaGuard**
+
+Before configuring your scans, you need to launch MedusaGuard. Follow these steps:
+
+#### Step 1: Navigate to MedusaGuard Directory
+Open a terminal and navigate to the directory where `medusaguard.py` is located:
+
+```bash
+cd /path/to/MedusaGuard
+```
+![image](https://github.com/user-attachments/assets/e88a41b9-0093-43a3-bbc8-ca141389a41a)
+
+#### Step 2: Run the MedusaGuard Script
+Start the application by running the following command with superuser permissions:
+
+```bash
+sudo python3 medusaguard.py
+```
+![image](https://github.com/user-attachments/assets/dc21e091-21a9-4a02-a9ce-733e0d334ed3)
+
+---
+
+## **Editing Configuration Setup**
+
+MedusaGuard includes an Edit Configuration page in the GUI to make it easy to set up and manage scan configurations for specific tasks.
+
+#### Step 1: Access the Edit Configuration Page
+- In the MedusaGuard GUI, navigate to the homepage (dashboard).
+- Click the **Edit Config** button to open the configuration editor.
+![image](https://github.com/user-attachments/assets/0d19fd60-03b2-4e8c-b5d3-cfa1a51d9d6f)
+
+#### Step 2: Fill Out the Configuration Fields
+Many of these fields come preconfigured. You only need to add your **Greenbone credentials**, **target name**, **task name**, and **target IP address(es)** before running your first scan.
+
+- **Socket Path**: The path to the Unix socket for Greenbone Vulnerability Manager (GVM) communication (e.g., `/run/gvmd/gvmd.sock`).
+- **Greenbone Username**: Username for Greenbone (OpenVAS) (e.g., `admin`).
+- **Greenbone Password**: Password for your Greenbone account (e.g., `mypassword`).
+- **Target Name**: Name of the scan target (e.g., `MyTargetServer`).
+- **Target IP Address**: IP address of the target machine (e.g., `192.168.1.100`).
+![image](https://github.com/user-attachments/assets/59027738-1b53-4bb9-94f6-6022b80295bf)
+
+Once completed, press **Save**.
+
+---
+
+## **Running Scans**
+
+#### Running Scans with the Main Script
+When you press **Start Scan** on the main page, MedusaGuard's main script will execute, running all configured tools. The log window will display the logs of the scan, including the duration.
+![image](https://github.com/user-attachments/assets/739ffb41-04ba-4df6-8b1a-a08b7627106e)
+
+The following scans are triggered:
+1. **Nuclei scan**
+2. **Nikto scan**
+3. **Greenbone scan**
+4. **Metasploit exploitation**
+
+A summary of the scan results will be displayed in the **Report Summary** after completion.
+![image](https://github.com/user-attachments/assets/98b4c82e-c25f-4380-b309-f6e957e5c74b)
+
+For detailed reports, access the full results in the specific folders listed on the left-hand side of the MedusaGuard interface:
+- **Custom Reports**
+- **Greenbone Reports**
+- **Nuclei Results**
+- **Metasploit Results**
+- **Nikto Results**
+![image](https://github.com/user-attachments/assets/39590654-8907-4fa5-a316-24e8d3c5bf9b)
+
+---
+
+## **Viewing Reports**
+
+Full reports are available in the specific folders for each tool's scan. These folders contain the full CSV or text results, which can be further analyzed.
+
+---
+
+## **Scheduling Scans**
+
+To schedule automated scans instead of running one-off scans, use the **Scan Scheduler** feature available in the MedusaGuard GUI.
+
+#### Step 1: Access the Scan Scheduler
+In the MedusaGuard interface, navigate to the left panel: **Config → Schedule Scan**.
+![image](https://github.com/user-attachments/assets/2089bf78-8e44-40d3-acb2-17868cacb1aa)
+
+#### Step 2: Configure the Schedule
+In the **Schedule Scan** page, you can configure the scan schedule by filling out the following:
+- **Comment**: Add a note about the scan (optional).
+- **Starts On**: Select the date and time when the scan should start.
+- **Time zone**: Choose the correct time zone for the scan.
+- **Repeat Every**: Set how frequently the scan should repeat (e.g., daily, weekly).
+![image](https://github.com/user-attachments/assets/dfc81ab1-504d-4600-b345-9353c23abb7a)
+
+Once all scheduling details are configured, click **Save / Start** to begin the scheduled scan.
+![image](https://github.com/user-attachments/assets/8ac2b0b7-5ebf-44d1-8cc0-37971ca7884c)
+![image](https://github.com/user-attachments/assets/02b61528-cbc3-4f27-b1d0-9dc25ab99702)
+
+---
+
+## **Alternate Execution Method (CLI)**
+
+If you prefer a more lightweight version of MedusaGuard, you can run it entirely through the command line.
+
+#### Step 1: Navigate to MedusaGuard Directory
+Open a terminal and navigate to the directory where `main.py` is located:
+
+```bash
+cd /path/to/MedusaGuard
+```
+![image](https://github.com/user-attachments/assets/cf5b0681-6f59-4511-afdc-0a35d7de99f3)
+
+#### Step 2: Execute `main.py`
+To start using MedusaGuard in the command line, explore the help output first by entering:
+
+```bash
+sudo python3 main.py -h
+```
+![image](https://github.com/user-attachments/assets/925dba6d-bb8f-4a5e-b300-1d3a8280750d)
+
+#### Step 3: Running Your First Scan
+To run a scan, enter the following command:
+
+```bash
+sudo python3 main.py
+```
+![image](https://github.com/user-attachments/assets/6082b6a5-ff71-40d4-bd4d-fb386a9de13c)
+
+#### Step 4: Passing Arguments
+To modify the scan configuration through the CLI, pass one or more arguments when executing the `main.py` script. For example, to change the task and target name, enter:
+![image](https://github.com/user-attachments/assets/54591528-d6ef-4122-a617-146dcde4ba07)
+
+```bash
+sudo python3 main.py --task_name example --target_name example
+```
+![image](https://github.com/user-attachments/assets/7eff9ddf-a492-43c9-bc81-855d18ca3226)
 ---
 
 ## **Troubleshooting Guide**  
