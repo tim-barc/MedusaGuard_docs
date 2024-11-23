@@ -33,7 +33,8 @@
 
 ## **Project Overview**
 
-**MedusaGuard** is an advanced automated vulnerability detection and exploitation tool designed to enhance the security of enterprise environments by identifying and exploiting vulnerabilities. Through automation, MedusaGuard offers continuous monitoring, enabling early detection and controlled mitigation of vulnerabilities **before** malicious actors can exploit them.
+**MedusaGuard** is an advanced automated vulnerability scanning and exploitation tool designed to enhance the security of small to larger environments by identifying and exploiting vulnerabilities. Through automation, MedusaGuard enables the early
+detection and controlled exploitation of vulnerabilities. 
 
 MedusaGuard integrates well-established open-source tools—**Nikto**, **Greenbone OpenVAS**, **Nuclei**, and **Metasploit**—for comprehensive vulnerability scanning and exploitation. It prioritizes security while maintaining system availability and integrity, ensuring that no harmful payloads are delivered during scans.
 
@@ -119,25 +120,53 @@ usage: main.py [-h] [--config CONFIG] [--username USERNAME] [--password PASSWORD
 
 ---
 
-## **Troubleshooting**
+## **Troubleshooting Guide**  
 
-This section outlines common issues and recommended solutions.
+This section lists common issues that may arise with MedusaGuard, along with recommended solutions.
 
 #### Externally-Managed Environment During Python Script Execution
-- **Cause**: Conflicting package management configurations.
-- **Solution**: Use a virtual environment (`venv`) or `pyenv`.
+- **Cause**: Conflicts in package management, possibly due to recent installations.
+- **Solution**: Consider using a virtual environment with `venv` or a Python version manager like `pyenv`. Alternatively (not recommended), ensure `pip` is configured correctly and run with `--break-system-packages`.
 
-#### Greenbone Timeout or Connection Reset
-- **Cause**: Scanning too many hosts or insufficient resources.
-- **Solution**: Restart GVM services, reduce target hosts, or increase machine resources.
+#### Greenbone Timeout or Connection Reset Issues
+- **Cause**: Network resource or configuration constraints, likely a result of scanning too many hosts, packet loss, insufficient computing resources (CPU, RAM, etc.), or misconfigured scan configuration.
+- **Solution**: Restart GVM services and run the scan again. Consider upgrading your machine or giving your VM more computing resources if the issue persists.
 
 #### Socket `/run/gvmd/gvmd.sock` Does Not Exist
-- **Cause**: GVM services not running.
-- **Solution**: Run `gvm-start`.
+- **Cause**: GVM services are not running, or socket path has changed.
+- **Solution**: Start GVM services by entering `gvm-start`, or ensure the socket path has not changed.
+
+#### Greenbone Connectivity Issues
+- **Cause**: The Greenbone services might not be running, or connection parameters may be incorrect.
+- **Solution**: Verify that the Greenbone service is running (`gvm-start`), and check `config.ini` for correct socket path and credentials. If the problem persists, try reinstalling Greenbone or run `gvm-check-setup`.
+
+#### Permission Denied or Elevated Privileges Required
+- **Cause**: The tool requires `sudo` privileges to execute.
+- **Solution**: Execute the script with `sudo` privileges (i.e., `sudo python3 medusaguard.py`).
+
+#### Unable to Detect the URI-Scheme of `<file-path>`
+- **Cause**: File path does not exist.
+- **Solution**: Start the scan or execute the `main.py` script, which will create all the required report directories.
+
+#### Report Summary Results not Showing
+- **Cause**: This issue typically only occurs right after installation, however it does not impact the tools operation whatsover (i.e., all reports still get generated). 
+- **Solution**: Run another scan. 
 
 #### Metasploit RPC Connection Fails
-- **Cause**: Metasploit RPC server not reachable.
-- **Solution**: Ensure Metasploit’s RPC server is running.
+- **Cause**: The Metasploit RPC server might not be reachable.
+- **Solution**: Ensure Metasploit’s RPC server is running and the credentials configured in `exploit_module.py` are correct.
+
+#### Nuclei Update/Scan Fails
+- **Cause**: Nuclei might require an update or template paths may be misconfigured.
+- **Solution**: Run `nuclei -update` in the terminal and ensure template directories are accessible and correct.
+
+#### Report Generation Errors or Missing Assets
+- **Cause**: Missing dependencies, data files, or assets needed for reports.
+- **Solution**: Ensure all dependencies have been installed, check for required image assets in `/assets`, and investigate the log file for detailed error messages if errors persist.
+
+#### Subprocess `TimeoutExpired` Errors
+- **Cause**: Long-running scans, especially on large networks, may exceed the set timeout (1 hour).
+- **Solution**: Increase timeout values directly in the `nikto_utils.py`, `openvas_utils.py`, and `nuclei_utils.py` scripts. You can do this by adjusting the `timeout` parameter in `subprocess.run()` calls.
 
 ---
 
