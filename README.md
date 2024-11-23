@@ -25,10 +25,11 @@
 4. [Installation](#installation)
 5. [Quick Start Guide](#quick-start)
 6. [User Guide](#user-guide)
-7. [Troubleshooting](#troubleshooting)
-8. [Sample Reports](#sample-reports)
-9. [License](#license)
-10. [Credits](#credits)
+7. [Modifying Scripts](#modifying-scripts)
+8. [Troubleshooting](#troubleshooting)
+9. [Sample Reports](#sample-reports)
+10. [License](#license)
+11. [Credits](#credits)
 
 ---
 
@@ -315,6 +316,81 @@ To modify the scan configuration through the CLI, pass one or more arguments whe
 sudo python3 main.py --task_name example --target_name example
 ```
 ![image](https://github.com/user-attachments/assets/7eff9ddf-a492-43c9-bc81-855d18ca3226)
+
+---
+
+## **Modifying Scripts**
+MedusaGuard is open-source, and you may need to modify some of its scripts to suit your specific needs. Below are some common modifications and how to implement them:
+
+#### **Modifying Templates for Nuclei** ####
+If you'd prefer to expand on the current Nuclei templates being used, you can do this by editing the following section of the 'nuclei_utils.py' file:
+```python
+    # Define the Nuclei scan commands to execute
+    nuclei_commands = {
+        "network": "nuclei -target {} -t network/ -o {}",
+        # "http": "nuclei -target {} -t http/ -o {}",
+        # "rdp": "nuclei -target rdp://{} -o {}"
+        # You can add more scan types and their corresponding commands here
+    }
+```
+
+This is where you can remove, add, or modify Nuclei templates. For context, Nuclei templates is how vulnerabilities are identified, so HTTP templates for example can identify HTTP based vulnerabilities. 
+
+#### **Modifying Timeout Settings for Long-Running Scans**
+If you find that scans are timing out, you can increase the timeout settings in the relevant script files.
+
+- **File**: `nikto_utils.py`, `openvas_utils.py`, `nuclei_utils.py`
+- **Modification**: Locate the `subprocess.run()` calls and adjust the `timeout` parameter.
+
+```python
+subprocess.run(['nikto', '-h', target], timeout=3600)  # Timeout is an hour
+```
+
+#### **Changing Default Scan Configurations**
+You may wish to change the default scan configurations used by MedusaGuard.
+
+- **File**: `config.ini`
+- **Modification**: Edit the default scan parameters such as **port lists**, and **scan configs** to better match your network environment.
+
+```ini
+[connection]
+path = /run/gvmd/gvmd.sock
+username = 
+password = 
+
+[target]
+target_name = 
+target_ip = targets.txt
+port_list_name = 33d0cd82-57c6-11e1-8ed1-406186ea4fc5
+
+[task]
+task_name = 
+scan_config = daba56c8-73ec-11df-a475-002264764cea
+scanner = 08b69003-5fc2-4037-a479-93b440211c73
+```
+
+#### **Customising Final Report**
+If you need to customize the final report, you can modify the 'report_utils.py' file. Each section of the report is commented accordinly, enabling you to add, modify, or remove sections.
+
+#### **Integrating Additional Tools**
+You might want to add new tools for scanning or exploitation to enhance MedusaGuard's capabilities. MedusaGuard is a module based tool, meaning you can add as many modules as desired to expand on the tools current capabilities
+without ruining its current operations. 
+
+- **File**: `main.py`
+- **Modification**: Import the new tool’s library and add a function to execute it within the main scanning sequence.
+
+```python
+import new_tool
+
+def run_new_tool(target):
+    new_tool.scan(target)
+```
+
+Add the function call to the main scan execution flow:
+
+```python
+run_new_tool(target)
+```
 
 ---
 
