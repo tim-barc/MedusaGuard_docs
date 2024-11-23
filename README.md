@@ -210,6 +210,19 @@ Once completed, press **Save**.
 
 ---
 
+## **Configuring Asset Criticality Score**
+Asset Criticality Score (ACS) configuration is not required, however, if you wish to apply an ACS from 1 to 5 for each asset click the Asset Criticality link in the sidebar:
+![image](https://github.com/user-attachments/assets/18238dd2-c7da-4285-a39c-ddcf0ebbdefd)
+This will open up the acs_scores.csv file:
+![image](https://github.com/user-attachments/assets/0bf0d1a0-44a3-4e5f-b58b-4631d2e851dd)
+In this file you can configure the ACS for each host you wish to scan, if you do not change or add an host ACS pairing, the default assigned to each host is 1, aka least critical. 
+If you wish to configure an ACS score, simply add it like as follows:
+![image](https://github.com/user-attachments/assets/be855c8d-762c-4f93-8688-e629dcf82609)
+As you can see in the above image, there are two host ACS pairings, one for 192.168.100.6 with an ACS of 2 and one for 192.168.100.28 with an ACS of 5. The purpose of ACS
+is to enable you to see what hosts are most critical in your environment, allowing you to better conduct remediation efforts. 
+
+---
+
 ## **Running Scans**
 
 #### Running Scans with the Main Script
