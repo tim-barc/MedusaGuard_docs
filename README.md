@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0418127b-6873-488d-baa3-b85f634c58ad)# MedusaGuard 🛡️  
+# MedusaGuard 🛡️  
 **Your Enterprise's Shield Against Vulnerabilities**
 
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg) ![OpenVAS](https://img.shields.io/badge/Tool-OpenVAS-green.svg) ![Nuclei](https://img.shields.io/badge/Tool-Nuclei-yellow.svg) ![Nikto](https://img.shields.io/badge/Tool-Nikto-orange.svg) ![Metasploit](https://img.shields.io/badge/Tool-Metasploit-red.svg)
