@@ -325,13 +325,13 @@ MedusaGuard is open-source, and you may need to modify some of its scripts to su
 #### **Modifying Templates for Nuclei** ####
 If you'd prefer to expand on the current Nuclei templates being used, you can do this by editing the following section of the 'nuclei_utils.py' file:
 ```python
-    # Define the Nuclei scan commands to execute
-    nuclei_commands = {
-        "network": "nuclei -target {} -t network/ -o {}",
-        # "http": "nuclei -target {} -t http/ -o {}",
-        # "rdp": "nuclei -target rdp://{} -o {}"
-        # You can add more scan types and their corresponding commands here
-    }
+# Define the Nuclei scan commands to execute
+nuclei_commands = {
+   "network": "nuclei -target {} -t network/ -o {}",
+   # "http": "nuclei -target {} -t http/ -o {}",
+   # "rdp": "nuclei -target rdp://{} -o {}"
+   # You can add more scan types and their corresponding commands here
+}
 ```
 
 This is where you can remove, add, or modify Nuclei templates. For context, Nuclei templates is how vulnerabilities are identified, so HTTP templates for example can identify HTTP based vulnerabilities. 
