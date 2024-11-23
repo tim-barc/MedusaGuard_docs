@@ -25,11 +25,9 @@
 4. [Installation](#installation)
 5. [Quick Start](#quick-start)
 6. [Troubleshooting](#troubleshooting)
-7. [Getting Started Guide](#getting-started-guide)
-8. [Sample Reports](#sample-reports)
-9. [API Commands](#api-commands)
-10. [License](#license)
-11. [Credits](#credits)
+7. [Sample Reports](#sample-reports)
+8. [License](#license)
+9. [Credits](#credits)
 
 ---
 
