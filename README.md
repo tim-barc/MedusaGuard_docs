@@ -40,8 +40,8 @@ detection and controlled exploitation of vulnerabilities.
 
 MedusaGuard integrates well-established open-source tools—**Nikto**, **Greenbone OpenVAS**, **Nuclei**, and **Metasploit**—for comprehensive vulnerability scanning and exploitation. It prioritizes security while maintaining system availability and integrity, ensuring that no harmful payloads are delivered during scans.
 
-<sup>[🔼 Back to top](#-table-of-contents)</sup>
 <sub>[🔼 Back to top](#-table-of-contents)</sub>
+<span style="font-size: smaller;">[🔼 Back to top](#-table-of-contents)</span>
 ---
 
 ## 🛠️ **Technologies Used**
