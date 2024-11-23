@@ -57,7 +57,7 @@ A highly efficient, template-based vulnerability scanner that detects security f
 #### Metasploit Framework
 Used for controlled exploitation of identified vulnerabilities to safely validate their impact in real-world scenarios without compromising system integrity.
 
-[Back to Top](#📜-table-of-contents)
+<sub>[Back to Top](#📜-table-of-contents)</sub>
 ---
 
 ## 🌟 **Key Features**
