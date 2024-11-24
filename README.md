@@ -481,7 +481,6 @@ This section lists common issues that may arise with MedusaGuard, along with rec
 - **Cause**: Long-running scans, especially on large networks, may exceed the set timeout (1 hour).
 - **Solution**: Increase timeout values directly in the `nikto_utils.py`, `openvas_utils.py`, and `nuclei_utils.py` scripts. You can do this by adjusting the `timeout` parameter in `subprocess.run()` calls.
 
-<sup><span style="font-size: xxx-small;">[Back to top](#-table-of-contents)</span></sup>
 ---
 
 ## **Sample Reports**
