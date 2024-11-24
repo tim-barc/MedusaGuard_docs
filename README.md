@@ -341,6 +341,7 @@ sudo python3 main.py --task_name example --target_name example
 Greenbone allows for both unauthenticated (default) and authenticated scans. If you wish to perform an unauthenticated scan on a public facing asset for example, all you need to do is execute MedusaGuard as normal.
 If, however, you wish to run an authenticated scan against internal assets, you will need to navigate and authenticate to the GVM interface. Once you have done so, navigate to Configuration > Credentials:
 ![image](https://github.com/user-attachments/assets/49bae593-8d6e-4508-9ac0-6c058c74067a)
+
 Once you are on this page, click the following button to add a new credential:
 ![image](https://github.com/user-attachments/assets/93b3967d-1912-4dfd-875b-c7140bb5aedc)
 On this page, you want to configure the credential, in this example it is just a username and password pair: 
