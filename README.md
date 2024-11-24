@@ -344,14 +344,19 @@ sudo python3 main.py --task_name example --target_name example
 ## **Authenticated Scan**
 Greenbone allows for both unauthenticated (default) and authenticated scans. If you wish to perform an unauthenticated scan on a public facing asset for example, all you need to do is execute MedusaGuard as normal.
 If, however, you wish to run an authenticated scan against internal assets, you will need to navigate and authenticate to the GVM interface. Once you have done so, navigate to Configuration > Credentials:
+
 ![image](https://github.com/user-attachments/assets/49bae593-8d6e-4508-9ac0-6c058c74067a)
 Once you are on this page, click the following button to add a new credential:
+
 ![image](https://github.com/user-attachments/assets/93b3967d-1912-4dfd-875b-c7140bb5aedc)
 On this page, you want to configure the credential, in this example it is just a username and password pair: 
+
 ![image](https://github.com/user-attachments/assets/dc6bac66-cc7f-48bc-ad3a-58586347d077)
 After clicking save, navigate to Configuration > Targets. On this page, click the following button to configure a new target:
+
 ![image](https://github.com/user-attachments/assets/9a416300-d66e-43e0-93bc-e867b4405b81)
 When configuring the target, make sure to use the targets.txt file found in the MedusaGuard directory and in this instance, because we are scanning a Windows environment click SMB authentication and select the credentials you made previously:
+
 ![image](https://github.com/user-attachments/assets/39f6f3d1-08df-46b5-8425-bcce76f56d04)
 It is recommended to create an account in your environment specially for vulnerability scanning that has access to systems you wish to scan. To run the scan in MedusaGuard, all you need to do is **make sure to make the target name in MedusaGuard the same as what you made on the GVM interface**. Also make sure to have the same assets in the targets.txt file and execute the scan as normal. 
 
