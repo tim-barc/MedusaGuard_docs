@@ -350,7 +350,7 @@ After clicking save, navigate to Configuration > Targets. On this page, click th
 ![image](https://github.com/user-attachments/assets/9a416300-d66e-43e0-93bc-e867b4405b81)
 When configuring the target, make sure to use the targets.txt file found in the MedusaGuard directory and in this instance, because we are scanning a Windows environment click SMB authentication and select the credentials you made previously:
 ![image](https://github.com/user-attachments/assets/39f6f3d1-08df-46b5-8425-bcce76f56d04)
-It is recommended to create an account in your environment specially for vulnerability scanning that has access to systems you wish to scan. To run the scan in MedusaGuard, all you need to do is **make sure to make the target name in MedusaGuard the same as what you made on the GVM interface**. Also make sure to have the same assets in the targets.txt file and execute the scan as normal. 
+It is recommended to create an account in your environment specially for vulnerability scanning that has access to systems you wish to scan. To run the scan in MedusaGuard, all you need to do is **make the target name in MedusaGuard the same as what you made on the GVM interface**. Also make sure to have the same assets in the targets.txt file and execute the scan as normal. 
 
 <sup><span style="font-size: xxx-small;">[Back to top](#-table-of-contents)</span></sup>
 ---
